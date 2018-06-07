@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Copy It</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="dist/copy.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Copy It</h1>
+            <p>No Flash, No Framework, Minimal configuration. Less than 1KB.</p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=ajshres&amp;repo=copyit&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=ajshres&amp;repo=copyit&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+        </div>
+        <h1>Why?</h1>
+        <p>Easy to use. Can be use to copy input, textarea, content-editable or copy text directly</p>
+        <h1>Installation</h1>
+        <p>
+            <code>npm install copy-it-js --save</code>
+        </p>
+        <h1>Usage</h1>
+        <b>Note: Both function returns true if copied successfull, otherwise returns false</b>
+        <p>
+            <code>
+                import {copyText, copyElement} from 'copy-it-js'
+            </code>
+        </p>
+        <p>OR</p>
+        <p>
+            <code>
+                &lt;script src="./node_modules/copy-it-js/dist/copy.min.js"&gt;&lt;/script&gt;
+            </code>
+        </p>
+
+        <h1>Example 1</h1>
+        <p>
+            <code>
+                import {copyText} from 'copy-it-js';<br>
+                or <br>
+                let copyText = copyit.copyText; <br>
+                <br>
+                copyText("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis debitis voluptatum saepe aut! Unde ratione reiciendis delectus similique quaerat perferendis dolore, earum laboriosam veritatis praesentium officiis ad, commodi expedita.")
+            </code>
+        </p>
+        <button class="btn btn-primary" onclick="alert(copyit.copyText('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis debitis voluptatum saepe aut! Unde ratione reiciendis delectus similique quaerat perferendis dolore, earum laboriosam veritatis praesentium officiis ad, commodi expedita.')?'Copied':'Could not copy')">Copy Lorem</button>
+        <h1>Example 2</h1>
+        <p>
+            <code>
+                import {copyText} from 'copy-it-js';<br>
+                or <br>
+                let copyText = copyit.copyText; <br>
+                <br>
+                copyText("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis debitis voluptatum saepe aut! Unde ratione reiciendis delectus similique quaerat perferendis dolore, earum laboriosam veritatis praesentium officiis ad, commodi expedita.")
+            </code>
+        </p>
+        <textarea id="example2" readonly class="form-control">
+            I am trying to copy text from textarea
+        </textarea>
+        <button class="btn btn-primary" onclick="alert(copyit.copyElement(document.getElementById('example2'))?'Copied':'Could not copy')">Copy textarea</button>
+
+        <h1>Example 3</h1>
+        <p>
+            <code id="example4">
+                import {copyText} from 'copy-it-js';<br>
+                or <br>
+                let copyText = copyit.copyText; <br>
+                <br>
+                copyText("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis debitis voluptatum saepe aut! Unde ratione reiciendis delectus similique quaerat perferendis dolore, earum laboriosam veritatis praesentium officiis ad, commodi expedita.")
+            </code>
+        </p>
+        <input id="example3" value="I am trying to copy text from input" />
+        <button class="btn btn-primary" onclick="alert(copyit.copyElement(document.getElementById('example3'))?'Copied':'Could not copy')">Copy input</button>
+        <button class="btn btn-primary" onclick="alert(copyit.copyElement(document.getElementById('example4'))?'Copied':'Could not copy')">Copy Code</button>
+    </div>
+</body>
+</html>
