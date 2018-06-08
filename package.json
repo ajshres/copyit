@@ -1,6 +1,6 @@
 {
   "name": "copy-it-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Copy content from text or as you desire",
   "main": "src/index.js",
   "scripts": {

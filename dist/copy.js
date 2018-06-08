@@ -85,7 +85,7 @@
 
         return selectedText;
     }
-    if(!window["copyit"]) {
+    if(window["copyit"]) {
         throw 'Copy it is already been taken as variable'
     } else {
         window["copyit"] = {
