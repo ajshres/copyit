@@ -1,7 +1,7 @@
 # COPY IT
 
 Small size copy to clipboard code. No Flash.
-
+[Demo](https://ajshres.github.io/copyit/)
 ## Install
 `npm install copy-it --save`
 
