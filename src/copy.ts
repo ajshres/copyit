@@ -9,7 +9,7 @@ import { select } from './select';
  * @param { string } textSelection 
  * @returns { boolean } succeeded
  */
-export function copyText ( textSelection ) {
+export function copyText ( textSelection: string ): boolean {
     // validate string
     var element = document.createElement("textarea");
     element.style.position = "absolute";
@@ -38,7 +38,7 @@ export function copyText ( textSelection ) {
  * @param {HTMLInputElement & HTMLSelectElement & HTMLElement} element
  * @returns
  */
-export function copyElement (element) {
+export function copyElement (element: HTMLInputElement & HTMLSelectElement & HTMLElement) {
     let succeeded = true;
     select(element);
     try {

@@ -3,25 +3,29 @@
 Small size copy to clipboard code. No Flash.
 [Demo](https://ajshres.github.io/copyit/)
 ## Install
-`npm install copy-it --save`
+`npm install copy-it-js --save`
+
+or
+
+`yarn add copy-it-js`
 
 ## How to use?
 
 Example 1:
-```
-import { copyText } from 'copy-it';
+```js
+import { copyText } from 'copy-it-js';
 
 copyText("Copy Me");
 ```
 
 Example 2:
-```
-import { copyElement } from 'copy-it';
+```js
+import { copyElement } from 'copy-it-js';
 
 copyElement(document.getElementById('someInput'))
 ```
 
-```
+```html
 <html>
     <head>...</head>
     <body>
@@ -32,7 +36,7 @@ copyElement(document.getElementById('someInput'))
 
 Example 3:
 
-```
+```html
 <html>
     <head>
         <script src="../dist/copy.min.js"></script>

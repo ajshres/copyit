@@ -10,11 +10,13 @@ copyTextButton.addEventListener('click', function(event) {
 let copyElementButton = document.getElementById('copyElementButton');
 let elementToCopy = document.getElementById('elementToCopy');
 copyElementButton.addEventListener('click', function(event) {
+    // @ts-ignore
     copyElement(elementToCopy);
 });
 
 let copyElementButton2 = document.getElementById('copyElementButton2');
 let elementToCopy2 = document.getElementById('elementToCopy2');
 copyElementButton2.addEventListener('click', function(event) {
+    // @ts-ignore
     copyElement(elementToCopy2);
 });

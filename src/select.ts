@@ -6,7 +6,7 @@
  * @param {HTMLInputElement & HTMLSelectElement & HTMLElement} element 
  * @returns { string } selectedText
  */
-export function select(element) {
+export function select(element: HTMLInputElement & HTMLSelectElement & HTMLElement): string {
     var selectedText;
     
     if (element.nodeName === 'SELECT') {

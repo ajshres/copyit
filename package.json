@@ -1,9 +1,42 @@
 {
   "name": "copy-it-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Copy content from text or as you desire",
-  "main": "src/index.js",
+  "main": "esm/index.js",
+  "module": "module/index.js",
+  "type": "module",
+  "file": [
+    "dist",
+    "esm",
+    "module",
+    "package.json",
+    "README.md",
+    "tsconfig.json",
+    "license.txt"
+  ],
+  "exports": {
+    "default": "./module/index.js",
+    "import": "./module/index.js",
+    "require": "./esm/index.js",
+    ".": {
+      "default": "module/index.js",
+      "import": "module/index.js",
+      "require": "./esm/index.js"
+    },
+    "./copy": {
+      "default": "./module/copy.js",
+      "import": "./module/copy.js",
+      "required": "./esm/copy.js"
+    },
+    "./select": {
+      "default": "./module/select.js",
+      "import": "./module/select.js",
+      "require": "./esm/select.js"
+    }
+  },
   "scripts": {
+    "babel-build": "./node_modules/.bin/babel src --out-dir module --copy-files --extensions '.tsx,.ts'",
+    "babel-build-esm": "BABEL_ENV=production && ./node_modules/.bin/babel src --out-dir esm --copy-files --extensions '.tsx,.ts'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:develop": "webpack --config webpack.config.js",
     "build:prod": "webpack --config webpack.prod.js",
@@ -18,15 +51,21 @@
     "plugins"
   ],
   "author": "Ajay Gopal Shrestha",
-  "license": "SEE LICENSE IN license.txt",
+  "license": "license.txt",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^8.0.0",
-    "uglifyjs-webpack-plugin": "^1.2.5",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.4"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-arrow-functions": "^7.8.3",
+    "@babel/plugin-transform-typescript": "^7.9.4",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/node": "^13.13.4",
+    "core-js": "^2.6.11",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
