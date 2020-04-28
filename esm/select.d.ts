@@ -1,0 +1,1 @@
+export function select(element: HTMLInputElement & HTMLSelectElement & HTMLElement): string
